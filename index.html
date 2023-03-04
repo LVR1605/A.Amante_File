@@ -1,154 +1,109 @@
 <!DOCTYPE html>
-<html>
-    <head><title>Registration and Assessment Form</title>
-    <style>
-        table, th, td
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio</title>
+    <link rel="shortcut icon" type="image" href="./portfolioLogo.ico">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="floating-parent">
+        <div class="right-button">
+        </div>
+        <nav>
+            <a href="#header"><img src="./up-arrow.png" class="emoji"></a>
+        </nav>
+    </div>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="./portfolioLogo.png" class="logo">
+                <ul>
+                    <li><a href="#header">HOME</a></li>
+                    <li><a href="#about">ABOUT</a></li>
+                    <button class="login-popup"><a href="#login-form">LOGIN</a></button>
+                </ul>
+            </nav>
+            <div class="header-text">
+                <p>Portfolio Design</p>
+                <h1>Hello there! <br> I'm <span>Aubrey Amante</span><br>from Philippines.</h1>
+            </div>
+        </div>
+    </div>
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="./typing.png">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="customization">ABOUT ME</h1>
+                    <p class="p-costumiztion">
+                        A computer science student who loves to learn about the latest technologies in the field and apply them to my projects. Passionate about coding and has a knack for quickly understanding new programming languages. I'm determined to use my knowledge and skills to make a positive impact on the world and become an influential role-model for the next generation of sudents alike.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id='login-form'class='login-page'>
+        <div class="form-box">
+            <div class='button-box'>
+                <div id='btn'></div>
+                <button type='button'onclick='login()'class='toggle-btn'>Log In</button>
+                <button type='button'onclick='register()'class='toggle-btn'>Register</button>
+            </div>
+            <form id='login' class='input-group-login'>
+                <img src="./email.ico" class="icon">
+                <input type='text'class='input-field'placeholder='Email Id' required >
+                <img src="./padlock.ico" class="icon">
+                <input type='password'class='input-field'placeholder='Enter Password' required>
+                <input type='checkbox'class='check-box'><span>Remember Password</span>
+                <button type='submit'class='submit-btn'>Log in</button>
+            </form>
+            <form id='register' class='input-group-register'>
+                <img src="./user.ico" class="icon">
+                <input type='text'class='input-field'placeholder='Username' required>
+                <img src="./email.ico" class="icon">
+                <input type='email'class='input-field'placeholder='Email Id' required>
+                <img src="./padlock.ico" class="icon">
+                <input type='password'class='input-field'placeholder='Enter Password' required>
+                <input type='checkbox'class='check-box'><span>I agree to the terms and conditions</span>
+                <button type='submit'class='submit-btn'>Register</button>
+            </form>
+        </div>
+    </div>
+</div>
+<script>
+    var x=document.getElementById('login');
+    var y=document.getElementById('register');
+    var z=document.getElementById('btn');
+    function register()
+    {
+        x.style.left='-400px';
+        y.style.left='50px';
+        z.style.left='110px';
+    }
+    function login()
+    {
+        x.style.left='50px';
+        y.style.left='450px';
+        z.style.left='0px';
+    }
+</script>
+<script>
+    var modal = document.getElementById('login-form');
+    window.onclick = function(event) 
+    {
+        if (event.target == modal) 
         {
-            border: 1px solid black;
-            border-collapse: collapse;
-            font-family: Arial, Helvetica, sans-serif;
-            font-weight: 100;
-            font-size: 90%;
+            modal.style.display = "none";
         }
-    </style>
-    </head>
-    <body>
-        <table style="width:65%">
-            <tr>
-                <th>Student Information</th>
-                <th>SY & Term:</th>
-                <th>2223/2T</th>
-                <th>Program:</th>
-                <th>BSCS</th>
-                <th>Year Level:</th>
-                <th>2Y2</th>
-            </tr>
-            <tr>
-                <th><b>02000255354</b></th>
-                <th colspan="2"><b>AMANTE</b></th>
-                <th colspan="2"><b>CRYSTAL AUBREY</b></th>
-                <th colspan="2"><b>JUANILLO</b></th>
-            </tr>
-            <tr>
-                <th><em>Student No</em></th>
-                <th colspan="2"><em>Last Name</em></th>
-                <th colspan="2"><em>First Name</em></th>
-                <th colspan="2"><em>Last Name</em></th>
-            </tr>
-            <tr>
-                <th colspan="7"><b>A C A D E M I C</b></th>
-            </tr>
-            <tr>
-                <th style="text-align:left;">Course Description</th>
-                <th>Units</th>
-                <th>Class No / Sec.</th>
-                <th>Days</th>
-                <th>Time</th>
-                <th>Room</th>
-                <th>Instructor</th>
-            </tr>
-            <tr>
-                <style>
-                    td
-                    {
-                        border: none;
-                        border-left: 1px solid black;
-                        border-right: 1px solid black;
-                        padding-top: 3px;
-                        padding-bottom: 3px;
-                    }
-                </style>
-                <td style="text-align:left;">Fundamentals of Web Programming</td>
-                <td style="text-align:center">3.0</td>
-                <td style="text-align:center">18136 / BSCS401</td>
-                <td style="text-align:center">M <br> F</td>
-                <td style="text-align:center">4:00PM - 6:00PM <br> 8:00PM - 11:00PM</td>
-                <td style="text-align:center"> <br> COMLAB2</td>
-                <td>CALIJA, VINCENT BRYAN <br>FUALVE</td>
-            </tr>
-            <tr>
-                <td style="text-align: left;">Information Management</td>
-                <td style="text-align:center">3.0</td>
-                <td style="text-align:center">18183 / BSIT401</td>
-                <td style="text-align:center">MTh <br> W</td>
-                <td style="text-align:center">2:00PM - 3:00PM <br> 2:00PM - 5:00PM</td>
-                <td style="text-align:center">303 <br>COMLAB3</td>
-                <td> UBAS, ELVI LITO <br>ESTAMPA</td>
-            </tr>
-            <tr>
-                <td style="text-align: left;">Computer Systems Architecture</td>
-                <td style="text-align:center">3.0</td>
-                <td style="text-align:center">18140 / BSCS401</td>
-                <td style="text-align:center">TF</td>
-                <td style="text-align:center">12:30PM - 2:00PM</td>
-                <td style="text-align:center">303</td>
-                <td> BANTIGUE, DOMINIC</td>
-            </tr>
-            <tr>
-                <td style="text-align: left;">College Calculus</td>
-                <td style="text-align:center">3.0</td>
-                <td style="text-align:center">18130 / BSCS201</td>
-                <td style="text-align:center">TF</td>
-                <td style="text-align:center">2:00PM - 3:30PM</td>
-                <td style="text-align:center">CHEM LAB</td>
-                <td> DUMALAURON, MICHAEL</td>
-            </tr>
-            <tr>
-                <td style="text-align: left;">Philippine Popular Culture</td>
-                <td style="text-align:center">3.0</td>
-                <td style="text-align:center">16419 / BSIT402</td>
-                <td style="text-align:center">TF</td>
-                <td style="text-align:center">3:30PM - 5:00PM</td>
-                <td style="text-align:center">302</td>
-                <td> POLISTICO, ARNIE A</td>
-            </tr>
-            <tr>
-                <td style="text-align: left;">Great Books</td>
-                <td style="text-align:center">3.0</td>
-                <td style="text-align:center">16483 / BSIT601</td>
-                <td style="text-align:center">TF</td>
-                <td style="text-align:center">5:00PM - 6:30PM</td>
-                <td style="text-align:center">103</td>
-                <td> </td>
-            </tr>
-            <tr>
-                <td style="text-align: left;">Design and Analysis of Algorithms</td>
-                <td style="text-align:center">3.0</td>
-                <td style="text-align:center">18134 / BSCS401</td>
-                <td style="text-align:center">TF</td>
-                <td style="text-align:center">6:30PM - 8:00PM</td>
-                <td style="text-align:center">301</td>
-                <td> </td>
-            </tr>
-            <tr>
-                <td style="text-align: left;">Ethics</td>
-                <td style="text-align:center">3.0</td>
-                <td style="text-align:center">14531 / BSHM401</td>
-                <td style="text-align:center">W</td>
-                <td style="text-align:center">2:00PM - 5:00PM</td>
-                <td style="text-align:center">302</td>
-                <td> SAVERON, SITTIE</td>
-            </tr>
-            <tr>
-                <td style="text-align: left;">Physical Education 4 (Team Sports)</td>
-                <td style="text-align:center">2.0</td>
-                <td style="text-align:center">16465 / BSIT402</td>
-                <td style="text-align:center">S</td>
-                <td style="text-align:center">2:00PM - 4:00PM</td>
-                <td style="text-align:center">AVR</td>
-                <td> OPSIMAR, SWETZEL</td>
-            </tr>
-            <tr>
-                <td style="text-align: right;">Total Units:</td>
-                <td colspan="1" style="text-align: center;"><b>26.00</b></td>
-                <td> </td>
-                <td> </td>
-                <td> </td>
-                <td> </td>
-                <td> </td>
-            </tr>
-            <th colspan="7" style="text-align:center"><b>F I N A N C I A L</b></th>
-            </tr>
-        </table>
-    </body>
+    }
+</script>
+</body>
 </html>
